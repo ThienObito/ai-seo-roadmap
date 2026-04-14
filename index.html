@@ -1,0 +1,209 @@
+cat > ~/ai-seo-architect-vision.html << 'EOF'
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI SEO INFRASTRUCTURE — QUANG THIEN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'JetBrains Mono', monospace; background: #050505; color: #fff; }
+    .glass { background: rgba(15,23,42,0.9); backdrop-filter: blur(20px); border: 1px solid rgba(0,247,255,0.2); }
+    .hero__title { font-size: clamp(2rem, 6vw, 4rem); line-height: 1; font-weight: 800; letter-spacing: -3px; }
+    .rain-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+    .card-hover { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer; }
+    .card-hover:hover { transform: translateY(-5px); box-shadow: 0 0 30px rgba(0,247,255,0.3); border-color: #00f7ff; }
+    .tech-label { color: #00f7ff; font-size: 10px; font-weight: bold; letter-spacing: 2px; }
+  </style>
+</head>
+<body class="overflow-x-hidden">
+
+  <canvas id="rain" class="rain-canvas"></canvas>
+
+  <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-xl px-8 py-6">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <div class="w-8 h-8 bg-cyan-400 rounded-sm flex items-center justify-center text-black font-black">T</div>
+        <span class="text-xl tracking-tighter font-bold uppercase">AI SEO <span class="text-cyan-400">ARCHITECT</span></span>
+      </div>
+      <div class="hidden md:flex gap-8 text-[10px] uppercase font-bold tracking-[0.3em]">
+        <span class="text-cyan-400">System: Operational</span>
+        <span class="text-white/40">Quang Thien</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="pt-48 pb-20 text-center max-w-5xl mx-auto px-6">
+    <div class="text-cyan-400 text-xs font-bold tracking-[0.5em] mb-4 uppercase">Internal Strategic Roadmap</div>
+    <h1 class="hero__title uppercase italic">Hệ Thống PHÂN TÍCH<br><span class="text-cyan-400">Chiếm Lĩnh Thị Trường</span></h1>
+    <p class="mt-8 text-white/40 text-sm max-w-2xl mx-auto leading-relaxed">
+      Tối ưu hóa phễu khách hàng thông qua mô hình <br><b>Autonomous Content & Semantic Neural Search.</b>
+    </p>
+  </section>
+
+  <div id="roadmap-grid" class="max-w-7xl mx-auto px-8 grid md:grid-cols-3 gap-6 pb-32"></div>
+
+  <div class="max-w-7xl mx-auto px-8 pb-32">
+    <div class="glass rounded-lg p-12 border-cyan-400/30 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-8 md:mb-0">
+        <h3 class="text-2xl font-black italic uppercase text-white">Chỉ số tối ưu hóa vận hành</h3>
+        <p class="text-xs text-white/40 mt-2 uppercase tracking-widest italic">Hệ thống xử lý Local - Không tốn tài nguyên API</p>
+      </div>
+      <div class="flex gap-16">
+        <div class="text-center">
+          <div class="text-4xl font-black text-cyan-400">~0$</div>
+          <div class="text-[9px] uppercase tracking-widest text-white/30 mt-2">API Cost / Month</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-black text-pink-500">10x</div>
+          <div class="text-[9px] uppercase tracking-widest text-white/30 mt-2">Lead Velocity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center text-white/10 text-[9px] py-12 border-t border-white/5 tracking-[0.8em] uppercase italic">
+    Verified by Trương Quang Thiện • 2026 
+  </footer>
+
+  <div id="modal" onclick="if(event.target===this)hideModal()" class="hidden fixed inset-0 bg-black/95 backdrop-blur-md items-center justify-center z-[100] p-6">
+    <div class="glass max-w-2xl w-full rounded-sm p-12 relative border-cyan-500/50">
+      <button onclick="hideModal()" class="absolute top-6 right-8 text-3xl text-white/30 hover:text-white transition">×</button>
+      <div id="modal-content" class="modal-scroll overflow-y-auto max-h-[70vh]"></div>
+    </div>
+  </div>
+
+  <script>
+    const roadmapData = [
+      { 
+        month: "Phase 01", 
+        title: "Khai Thác Neural Keywords", 
+        content: `**Hạ tầng kỹ thuật:**\n\n` +
+                 `• **Neural Search Analysis:** Triển khai thuật toán quét sâu (Deep Scan) để trích xuất 10,000+ thực thể từ khóa mà khách hàng tiềm năng thường xuyên tìm kiếm nhưng đối thủ bỏ sót.\n` +
+                 `• **Intent Mapping:** Sử dụng AI để phân loại ý định tìm kiếm, tập trung 100% vào tệp khách hàng có nhu cầu tư vấn trực tiếp ngay lập tức.\n` +
+                 `• **Data Guard:** Cấu hình hệ thống chạy hoàn toàn trên server nội bộ, bảo mật tuyệt đối chiến lược kinh doanh của công ty.` 
+      },
+      { 
+        month: "Phase 02", 
+        title: "Cấu Trúc Authority Layer", 
+        content: `**Tối ưu hóa chuyên gia:**\n\n` +
+                 `• **Semantic Clustering:** Xây dựng các cụm nội dung vệ tinh bao quanh dịch vụ lõi của công ty, tạo dựng lòng tin tuyệt đối với thuật toán Google.\n` +
+                 `• **E-E-A-T Architecture:** AI tự động tích hợp dữ liệu thực tế và các bằng chứng chuyên môn vào bài viết, biến website thành "bộ bách khoa toàn thư" trong ngành.\n` +
+                 `• **Conversion Flow:** Thiết kế dòng chảy nội dung dẫn dắt người dùng đến hành động liên hệ Hotline duy nhất.`
+      },
+      { 
+        month: "Phase 03", 
+        title: "Tự Động Hóa Phễu Thu Lead", 
+        content: `**Vận hành thông minh:**\n\n` +
+                 `• **Contextual CTA:** AI tự động tính toán vị trí vàng để đặt yêu cầu tư vấn, đảm bảo tỷ lệ chuyển đổi từ người đọc sang khách hàng tiềm năng là cao nhất.\n` +
+                 `• **Schema Engineering:** Triển khai các cấu trúc dữ liệu nâng cao (JSON-LD) giúp thông tin dịch vụ và Hotline hiển thị rực rỡ trên trang 1 Google.\n` +
+                 `• **Trust Signal Sync:** Tự động đồng bộ hóa các phản hồi tích cực của khách hàng vào phễu nội dung.`
+      },
+      { 
+        month: "Phase 04", 
+        title: "Chiến Lược Bao Vây Đa Kênh", 
+        content: `**Mở rộng tầm ảnh hưởng:**\n\n` +
+                 `• **Multi-Source Traffic:** Tận dụng AI để chuyển đổi dữ liệu SEO thành các kịch bản tư vấn trên Zalo, Facebook, thu hút khách hàng từ mọi điểm chạm.\n` +
+                 `• **Automated Outreach:** Hệ thống tự động tìm kiếm và kết nối với các đối tác liên quan để gia tăng uy tín tên miền (Domain Authority).\n` +
+                 `• **Competitor Displacement:** Liên tục cập nhật để thay thế vị trí của đối thủ bằng nội dung chất lượng hơn gấp 5 lần.`
+      },
+      { 
+        month: "Phase 05", 
+        title: "Hệ Thống Tự Hiệu Chỉnh (AI-Ops)", 
+        content: `**Duy trì vị thế thống trị:**\n\n` +
+                 `• **Performance Analytics:** Kết nối trực tiếp dữ liệu tìm kiếm thực tế để AI tự "học" và điều chỉnh văn phong sao cho phù hợp nhất với tâm lý khách hàng theo từng thời điểm.\n` +
+                 `• **Content Refactoring:** Tự động làm mới và nâng cấp các bài viết cũ, đảm bảo website luôn đứng đầu xu hướng tìm kiếm.\n` +
+                 `• **Bot Monitoring:** Hệ thống cảnh báo sớm mọi biến động của thị trường trực tiếp qua Telegram.`
+      },
+      { 
+        month: "Phase 06", 
+        title: "Quy Trình Hóa & Nhân Bản", 
+        content: `**Tự do hóa vận hành:**\n\n` +
+                 `• **Operational Excellence:** Đóng gói toàn bộ bí quyết công nghệ thành tài sản số của công ty.\n` +
+                 `• **Strategic Growth:** Khi hệ thống đã tự vận hành mang về khách ổn định, chúng ta có thể nhân bản sang bất kỳ mảng kinh doanh ngách nào chỉ trong 48 giờ.\n` +
+                 `• **Ultimate Goal:** Một cỗ máy săn khách hàng bền vững, mang lại lợi nhuận tối đa với chi phí nhân sự tối thiểu.`
+      }
+    ];
+
+    const grid = document.getElementById('roadmap-grid');
+    roadmapData.forEach((item, index) => {
+      grid.innerHTML += `
+        <div onclick="showDetail(${index})" class="glass rounded-sm p-8 card-hover">
+          <div class="tech-label mb-4 uppercase">${item.month} _</div>
+          <h2 class="text-xl font-bold mb-4 italic uppercase tracking-tighter">${item.title}</h2>
+          <p class="text-white/20 text-[9px] font-bold tracking-[0.4em] uppercase">Status: Initializing</p>
+        </div>
+      `;
+    });
+
+    const canvas = document.getElementById('rain');
+    const ctx = canvas.getContext('2d');
+    let w, h, stars = [];
+
+    function resize() {
+      w = window.innerWidth; h = window.innerHeight;
+      canvas.width = w; canvas.height = h;
+    }
+
+    class Star {
+      constructor() { this.reset(); }
+      reset() {
+        this.x = Math.random() * w;
+        this.y = Math.random() * -h;
+        this.speed = 0.8 + Math.random() * 1.5;
+        this.len = 20 + Math.random() * 40;
+        this.opacity = 0.1 + Math.random() * 0.3;
+      }
+      draw() {
+        ctx.strokeStyle = `rgba(0, 247, 255, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(this.x, this.y + this.len);
+        ctx.stroke();
+        this.y += this.speed;
+        if (this.y > h) this.reset();
+      }
+    }
+
+    function initStars() {
+      stars = [];
+      for (let i = 0; i < 60; i++) stars.push(new Star());
+    }
+
+    function animate() {
+      ctx.fillStyle = 'rgba(5, 5, 5, 0.2)';
+      ctx.fillRect(0, 0, w, h);
+      stars.forEach(s => s.draw());
+      requestAnimationFrame(animate);
+    }
+
+    window.addEventListener('resize', () => { resize(); initStars(); });
+    resize(); initStars(); animate();
+
+    function showDetail(index) {
+      const item = roadmapData[index];
+      const formatted = item.content
+        .replace(/\*\*(.*?)\*\*/g, '<b class="text-cyan-400">$1</b>')
+        .replace(/• (.*?)\n/g, '<li class="mb-3 list-none border-l border-cyan-500/30 pl-4"> $1</li>')
+        .replace(/\n/g, '<br>');
+
+      document.getElementById('modal-content').innerHTML = `
+        <div class="text-cyan-400 text-[10px] font-bold tracking-[0.5em] mb-4 uppercase">${item.month} // Strategic Detail</div>
+        <h2 class="text-3xl font-black mb-8 italic uppercase tracking-tighter text-white">${item.title}</h2>
+        <div class="text-white/60 leading-relaxed text-sm font-medium">
+          ${formatted}
+        </div>
+      `;
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modal').classList.add('flex');
+    }
+
+    function hideModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modal').classList.remove('flex');
+    }
+  </script>
+</body>
+</html>
+EOF
